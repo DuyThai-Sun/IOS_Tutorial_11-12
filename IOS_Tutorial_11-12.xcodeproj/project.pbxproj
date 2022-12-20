@@ -9,14 +9,19 @@
 /* Begin PBXBuildFile section */
 		1A3D0D1529514BC200FBFC07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3D0D1429514BC200FBFC07 /* AppDelegate.swift */; };
 		1A3D0D1729514BC200FBFC07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3D0D1629514BC200FBFC07 /* SceneDelegate.swift */; };
-		1A3D0D1929514BC200FBFC07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3D0D1829514BC200FBFC07 /* ViewController.swift */; };
 		1A3D0D1C29514BC200FBFC07 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A3D0D1A29514BC200FBFC07 /* Main.storyboard */; };
 		1A3D0D1F29514BC200FBFC07 /* IOS_Tutorial_11_12.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A3D0D1D29514BC200FBFC07 /* IOS_Tutorial_11_12.xcdatamodeld */; };
 		1A3D0D2129514BC300FBFC07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A3D0D2029514BC300FBFC07 /* Assets.xcassets */; };
 		1A3D0D2429514BC300FBFC07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A3D0D2229514BC300FBFC07 /* LaunchScreen.storyboard */; };
-		1A3D0D2F29514BC300FBFC07 /* IOS_Tutorial_11_12Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3D0D2E29514BC300FBFC07 /* IOS_Tutorial_11_12Tests.swift */; };
-		1A3D0D3929514BC300FBFC07 /* IOS_Tutorial_11_12UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3D0D3829514BC300FBFC07 /* IOS_Tutorial_11_12UITests.swift */; };
-		1A3D0D3B29514BC300FBFC07 /* IOS_Tutorial_11_12UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3D0D3A29514BC300FBFC07 /* IOS_Tutorial_11_12UITestsLaunchTests.swift */; };
+		1A3D0D4A29514E9600FBFC07 /* SearchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3D0D4929514E9600FBFC07 /* SearchScreenViewController.swift */; };
+		1A3D0D4D2951533A00FBFC07 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3D0D4C2951533A00FBFC07 /* UserTableViewCell.swift */; };
+		1A3D0D532951919400FBFC07 /* APIRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3D0D522951919400FBFC07 /* APIRepository.swift */; };
+		1A3D0D562951994600FBFC07 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3D0D552951994600FBFC07 /* UserModel.swift */; };
+		1A3D0D5929519B9500FBFC07 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3D0D5829519B9500FBFC07 /* APICaller.swift */; };
+		1A3D0D5B29519F3800FBFC07 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3D0D5A29519F3800FBFC07 /* UserRepository.swift */; };
+		1A3D0D602952925D00FBFC07 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3D0D5F2952925D00FBFC07 /* ViewExtension.swift */; };
+		1A3D0D652952A12700FBFC07 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3D0D642952A12700FBFC07 /* Enum.swift */; };
+		1A3D0D672952B11500FBFC07 /* ReuseableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3D0D662952B11500FBFC07 /* ReuseableViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,17 +45,22 @@
 		1A3D0D1129514BC200FBFC07 /* IOS_Tutorial_11-12.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS_Tutorial_11-12.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A3D0D1429514BC200FBFC07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A3D0D1629514BC200FBFC07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1A3D0D1829514BC200FBFC07 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1A3D0D1B29514BC200FBFC07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1A3D0D1E29514BC200FBFC07 /* IOS_Tutorial_11_12.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IOS_Tutorial_11_12.xcdatamodel; sourceTree = "<group>"; };
 		1A3D0D2029514BC300FBFC07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A3D0D2329514BC300FBFC07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A3D0D2529514BC300FBFC07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A3D0D2A29514BC300FBFC07 /* IOS_Tutorial_11-12Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IOS_Tutorial_11-12Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A3D0D2E29514BC300FBFC07 /* IOS_Tutorial_11_12Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_Tutorial_11_12Tests.swift; sourceTree = "<group>"; };
 		1A3D0D3429514BC300FBFC07 /* IOS_Tutorial_11-12UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IOS_Tutorial_11-12UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A3D0D3829514BC300FBFC07 /* IOS_Tutorial_11_12UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_Tutorial_11_12UITests.swift; sourceTree = "<group>"; };
-		1A3D0D3A29514BC300FBFC07 /* IOS_Tutorial_11_12UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_Tutorial_11_12UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1A3D0D4929514E9600FBFC07 /* SearchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenViewController.swift; sourceTree = "<group>"; };
+		1A3D0D4C2951533A00FBFC07 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		1A3D0D522951919400FBFC07 /* APIRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepository.swift; sourceTree = "<group>"; };
+		1A3D0D552951994600FBFC07 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		1A3D0D5829519B9500FBFC07 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		1A3D0D5A29519F3800FBFC07 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		1A3D0D5F2952925D00FBFC07 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		1A3D0D642952A12700FBFC07 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		1A3D0D662952B11500FBFC07 /* ReuseableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseableViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				1A3D0D1329514BC200FBFC07 /* IOS_Tutorial_11-12 */,
-				1A3D0D2D29514BC300FBFC07 /* IOS_Tutorial_11-12Tests */,
-				1A3D0D3729514BC300FBFC07 /* IOS_Tutorial_11-12UITests */,
 				1A3D0D1229514BC200FBFC07 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,9 +109,15 @@
 		1A3D0D1329514BC200FBFC07 /* IOS_Tutorial_11-12 */ = {
 			isa = PBXGroup;
 			children = (
+				1A3D0D632952A10D00FBFC07 /* Enum */,
+				1A3D0D5E2952920D00FBFC07 /* Extensions */,
+				1A3D0D5729519B7E00FBFC07 /* Manager */,
+				1A3D0D542951993200FBFC07 /* Models */,
+				1A3D0D512951917200FBFC07 /* Repository */,
+				1A3D0D50295190C900FBFC07 /* Controller */,
+				1A3D0D4B295152FF00FBFC07 /* View */,
 				1A3D0D1429514BC200FBFC07 /* AppDelegate.swift */,
 				1A3D0D1629514BC200FBFC07 /* SceneDelegate.swift */,
-				1A3D0D1829514BC200FBFC07 /* ViewController.swift */,
 				1A3D0D1A29514BC200FBFC07 /* Main.storyboard */,
 				1A3D0D2029514BC300FBFC07 /* Assets.xcassets */,
 				1A3D0D2229514BC300FBFC07 /* LaunchScreen.storyboard */,
@@ -113,21 +127,62 @@
 			path = "IOS_Tutorial_11-12";
 			sourceTree = "<group>";
 		};
-		1A3D0D2D29514BC300FBFC07 /* IOS_Tutorial_11-12Tests */ = {
+		1A3D0D4B295152FF00FBFC07 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1A3D0D2E29514BC300FBFC07 /* IOS_Tutorial_11_12Tests.swift */,
+				1A3D0D4C2951533A00FBFC07 /* UserTableViewCell.swift */,
 			);
-			path = "IOS_Tutorial_11-12Tests";
+			path = View;
 			sourceTree = "<group>";
 		};
-		1A3D0D3729514BC300FBFC07 /* IOS_Tutorial_11-12UITests */ = {
+		1A3D0D50295190C900FBFC07 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1A3D0D3829514BC300FBFC07 /* IOS_Tutorial_11_12UITests.swift */,
-				1A3D0D3A29514BC300FBFC07 /* IOS_Tutorial_11_12UITestsLaunchTests.swift */,
+				1A3D0D4929514E9600FBFC07 /* SearchScreenViewController.swift */,
 			);
-			path = "IOS_Tutorial_11-12UITests";
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1A3D0D512951917200FBFC07 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				1A3D0D522951919400FBFC07 /* APIRepository.swift */,
+				1A3D0D5A29519F3800FBFC07 /* UserRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		1A3D0D542951993200FBFC07 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A3D0D552951994600FBFC07 /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1A3D0D5729519B7E00FBFC07 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				1A3D0D5829519B9500FBFC07 /* APICaller.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		1A3D0D5E2952920D00FBFC07 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1A3D0D5F2952925D00FBFC07 /* ViewExtension.swift */,
+				1A3D0D662952B11500FBFC07 /* ReuseableViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1A3D0D632952A10D00FBFC07 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				1A3D0D642952A12700FBFC07 /* Enum.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +317,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A3D0D1F29514BC200FBFC07 /* IOS_Tutorial_11_12.xcdatamodeld in Sources */,
-				1A3D0D1929514BC200FBFC07 /* ViewController.swift in Sources */,
 				1A3D0D1529514BC200FBFC07 /* AppDelegate.swift in Sources */,
+				1A3D0D672952B11500FBFC07 /* ReuseableViewExtension.swift in Sources */,
+				1A3D0D562951994600FBFC07 /* UserModel.swift in Sources */,
+				1A3D0D532951919400FBFC07 /* APIRepository.swift in Sources */,
+				1A3D0D5929519B9500FBFC07 /* APICaller.swift in Sources */,
+				1A3D0D602952925D00FBFC07 /* ViewExtension.swift in Sources */,
+				1A3D0D652952A12700FBFC07 /* Enum.swift in Sources */,
+				1A3D0D4A29514E9600FBFC07 /* SearchScreenViewController.swift in Sources */,
 				1A3D0D1729514BC200FBFC07 /* SceneDelegate.swift in Sources */,
+				1A3D0D5B29519F3800FBFC07 /* UserRepository.swift in Sources */,
+				1A3D0D4D2951533A00FBFC07 /* UserTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +335,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A3D0D2F29514BC300FBFC07 /* IOS_Tutorial_11_12Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,8 +342,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A3D0D3929514BC300FBFC07 /* IOS_Tutorial_11_12UITests.swift in Sources */,
-				1A3D0D3B29514BC300FBFC07 /* IOS_Tutorial_11_12UITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +430,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -424,7 +484,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
