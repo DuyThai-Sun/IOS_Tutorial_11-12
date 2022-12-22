@@ -13,14 +13,19 @@ final class SearchScreenViewController: UIViewController {
     
     private var userRepository = UserRepository()
     private var users = [User]()
+    private var oldTextSearch = ""
+    private var timer: Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        listUserTableView.dataSource = self
+        listUserTableView.delegate = self
         getUsers(name: "abc")
         congfigView()
     }
     
     private func congfigView() {
+        title = "Search User"
         congfigSearchBar()
     }
     
@@ -55,5 +60,35 @@ extension SearchScreenViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(UserTableViewCell.self)
         cell.bindData(user: users[indexPath.row])
         return cell
+    }
+}
+
+extension SearchScreenViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        var query = searchText
+        query = query.removeWhitespace()
+        if query.isEmpty {
+            self.getUsers(name: self.oldTextSearch)
+        } else {
+            if query.trimmingCharacters(in: .whitespaces).count >= 3 {
+                self.oldTextSearch = query
+                timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block: { (timer) in
+                    self.getUsers(name: query)
+                })
+            }
+        }
+    }
+}
+
+extension SearchScreenViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let detailScreen = storyBoard.instantiateViewController(withIdentifier: "DetailUserScreenViewController") as? DetailUserScreenViewController
+        detailScreen?.bindData(user: users[indexPath.row])
+        self.navigationController?.pushViewController(detailScreen!, animated: true)
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        self.userSearchBar.endEditing(true)
     }
 }

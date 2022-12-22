@@ -9,6 +9,7 @@ import Foundation
 
 enum ConstantsAPI: String {
     case baseURL = "https://api.github.com/"
+    case informUser = "https://api.github.com/users/"
 }
 
 enum NetworkError: Error {

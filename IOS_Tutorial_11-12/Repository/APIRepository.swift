@@ -9,6 +9,9 @@ import Foundation
 
 protocol APIRespository {
     associatedtype T
+    associatedtype I
     func getUsersByName(name: String, completion: @escaping ([T]?, Error?) -> Void)
-    func getUserDetail(urlApi: String, completion: @escaping (T?, Error?) -> Void)
+    func getFollowersUsers(name: String, completion: @escaping ([T]?, Error?) -> Void)
+    func getFollowingUsers(name: String, completion: @escaping ([T]?, Error?) -> Void)
+    func getInformUser(name: String, completion: @escaping (I?, Error?) -> Void)
 }
