@@ -21,4 +21,10 @@ extension UIView {
         self.layer.shadowOffset = offSet
         self.layer.shadowPath = UIBezierPath(rect: CGRect(x: 0, y: self.bounds.maxY - self.layer.shadowRadius, width: self.bounds.width, height: self.layer.shadowRadius)).cgPath
     }
+    
+    func topCornerRadius(cornerRadius: CGFloat) {
+        layer.masksToBounds = true
+        layer.cornerRadius = cornerRadius
+        layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+    }
 }
