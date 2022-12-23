@@ -2,12 +2,13 @@
 //  UserModel.swift
 //  IOS_Tutorial_11-12
 //
-//  Created by Duy Thái on 20/12/2022.
+//  Created by Duy Thai on 20/12/2022.
 //
 
 import Foundation
 
-struct User: Codable {
+struct UserModel: Codable {
+    let isFavorited = false
     let login: String
     let id: Int
     let avatarUrl: String
@@ -31,7 +32,7 @@ struct User: Codable {
 
 struct Users: Codable {
     let totalCount: Int
-    let items: [User]
+    let items: [UserModel]
     
     enum CodingKeys: String, CodingKey {
         case totalCount = "total_count"

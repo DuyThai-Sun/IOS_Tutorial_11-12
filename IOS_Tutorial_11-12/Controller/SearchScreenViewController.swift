@@ -9,19 +9,26 @@ import UIKit
 final class SearchScreenViewController: UIViewController {
     @IBOutlet private weak var userSearchBar: UISearchBar!
     @IBOutlet private weak var iconHeartButton: UIButton!
-    @IBOutlet private weak var listUserTableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
     private var userRepository = UserRepository()
-    private var users = [User]()
+    private var users = [UserModel]()
     private var oldTextSearch = ""
-    private var timer: Timer?
+    private var timer: Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        listUserTableView.dataSource = self
-        listUserTableView.delegate = self
+        tableView.dataSource = self
+        tableView.delegate = self
         getUsers(name: "abc")
         congfigView()
+    }
+    
+    @IBAction private func iconHeartButtonTapped(_ sender: Any) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let favoriteScreen = storyBoard.instantiateViewController(withIdentifier: "FavoriteScreenViewController") as? FavoriteScreenViewController
+        favoriteScreen?.title = "Favorite"
+        self.navigationController?.pushViewController(favoriteScreen!, animated: true)
     }
     
     private func congfigView() {
@@ -38,7 +45,7 @@ final class SearchScreenViewController: UIViewController {
             if let data = data {
                 self.users = data
                 DispatchQueue.main.async {
-                    self.listUserTableView.reloadData()
+                    self.tableView.reloadData()
                 }
             }
         }
@@ -72,7 +79,7 @@ extension SearchScreenViewController: UISearchBarDelegate {
         } else {
             if query.trimmingCharacters(in: .whitespaces).count >= 3 {
                 self.oldTextSearch = query
-                timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block: { (timer) in
+                timer = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: false, block: { (timer) in
                     self.getUsers(name: query)
                 })
             }
@@ -86,6 +93,7 @@ extension SearchScreenViewController: UITableViewDelegate {
         let detailScreen = storyBoard.instantiateViewController(withIdentifier: "DetailUserScreenViewController") as? DetailUserScreenViewController
         detailScreen?.bindData(user: users[indexPath.row])
         self.navigationController?.pushViewController(detailScreen!, animated: true)
+
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
