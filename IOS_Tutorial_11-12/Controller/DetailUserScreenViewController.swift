@@ -2,14 +2,15 @@
 //  DetailUserScreenViewController.swift
 //  IOS_Tutorial_11-12
 //
-//  Created by Duy Thái on 21/12/2022.
+//  Created by Duy Thai on 21/12/2022.
 //
 
 import UIKit
 
 final class DetailUserScreenViewController: UIViewController {
+    @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet private weak var nameAndAddressLabel: UILabel!
-    @IBOutlet private weak var nameSkillLabel: UILabel!
+    @IBOutlet private weak var bioLabel: UILabel!
     @IBOutlet private weak var userImageView: UIImageView!
     @IBOutlet private weak var followingButton: UIButton!
     @IBOutlet private weak var followerButton: UIButton!
@@ -17,13 +18,16 @@ final class DetailUserScreenViewController: UIViewController {
     @IBOutlet private weak var numberFollowingLabel: UILabel!
     @IBOutlet private weak var numberFollowerLabel: UILabel!
     @IBOutlet private weak var containInformView: UIView!
-    @IBOutlet private weak var listUserTableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
     private var followerButtonIsSelected = true
     private let callAPI = APICaller.shared
     private var userRepository = UserRepository()
-    private var followers = [User]()
-    private var following = [User]()
+    private var followers = [UserModel]()
+    private var following = [UserModel]()
+    private var isFavorited = false
+    private let coreData = CoreData.shared
+    private var user: UserModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,15 +36,15 @@ final class DetailUserScreenViewController: UIViewController {
     
     private func configView() {
         userImageView.circleView()
+        favoriteButton.circleView()
         containInformView.layer.cornerRadius = 40
         configFollowerAndFollowingButton()
     }
     
-    func bindData (user: User) {
+    func bindData (user: UserModel) {
         self.callAPI.getImage(imageURL: (user.avatarUrl)) { [weak self] (data, error)  in
             guard let self = self else { return }
-            if let error = error {
-                print(error)
+            if let _ = error {
                 return
             }
             if let data = data {
@@ -49,34 +53,65 @@ final class DetailUserScreenViewController: UIViewController {
                 }
             }
         }
-        self.updateInformUser(name: user.login)
-        self.getInformFollow(name: user.login)
+        self.user = user
+        self.updateUser(name: user.login)
+        self.getDataFollowerAndFollowing(name: user.login)
+        DispatchQueue.main.async {
+            self.checkUserIsFavorited(user: user)
+        }
+        
     }
     
-    private func updateInformUser (name: String) {
-        userRepository.getInformUser(name: name) {  [weak self] (data, error) in
+    private func checkUserIsFavorited(user: UserModel) {
+        if coreData.checkUserInCoreData(informUser: user) {
+            self.favoriteButton.backgroundColor = .systemPink
+            self.isFavorited = true
+        } else {
+            self.favoriteButton.backgroundColor = UIColor(#colorLiteral(red: 0.9670718312, green: 0.5393305421, blue: 0.03985216469, alpha: 1))
+            self.isFavorited = false
+        }
+    }
+    
+    private func updateUser (name: String) {
+        userRepository.getDataUser(name: name) {  [weak self] (data, error) in
             guard let self = self else { return }
             if let _ = error {
                 return
             }
             if let data = data {
                 DispatchQueue.main.async {
-                    self.upadateLabelName(data: data)
+                    self.upadateLabel(data: data)
                 }
           }
         }
     }
     
-    private func upadateLabelName(data: UserDetail) {
+    @IBAction func favoriteButtonTapped(_ sender: Any) {
+        configFavoriteButton()
+    }
+    
+    private func configFavoriteButton() {
+        if isFavorited {
+            coreData.deleteUser(user: user)
+            favoriteButton.backgroundColor = UIColor(#colorLiteral(red: 0.9670718312, green: 0.5393305421, blue: 0.03985216469, alpha: 1))
+            isFavorited = false
+        } else {
+            coreData.addUser(informUser: user)
+            favoriteButton.backgroundColor = .systemPink
+            isFavorited = true
+        }
+    }
+    
+    private func upadateLabel(data: UserDetail) {
         self.nameAndAddressLabel.text = "\(data.name ?? "no name")*\(data.location ?? "")"
         self.numberFollowerLabel.text = "\(data.followers ?? 0)"
         self.numberFollowingLabel.text = "\(data.following ?? 0)"
         self.numberRespositoryLabel.text = "\(data.publicRepos ?? 0)"
-        self.nameSkillLabel.text = "\(data.bio ?? "no bio")"
+        self.bioLabel.text = "\(data.bio ?? "no bio")"
     }
     
-    private func getInformFollow(name: String) {
-        userRepository.getFollowersUsers(name: name) { [weak self] (data, error) in
+    private func getDataFollowerAndFollowing(name: String) {
+        userRepository.getFollowers(name: name) { [weak self] (data, error) in
             guard let self = self else { return }
             if let _ = error {
                 return
@@ -84,12 +119,12 @@ final class DetailUserScreenViewController: UIViewController {
             if let data = data {
                 self.followers = data
                 DispatchQueue.main.async {
-                    self.listUserTableView.reloadData()
+                    self.tableView.reloadData()
                 }
             }
         }
         
-        userRepository.getFollowingUsers(name: name) { [weak self] (data, error) in
+        userRepository.getFollowing(name: name) { [weak self] (data, error) in
             guard let self = self else { return }
             if let _ = error {
                 return
@@ -117,11 +152,11 @@ final class DetailUserScreenViewController: UIViewController {
     }
     
     @IBAction private func followerButtonTapped(_ sender: Any) {
-        if followerButtonIsSelected == false {
+        if !followerButtonIsSelected {
             followerButtonIsSelected = true
             configFollowerAndFollowingButton()
             DispatchQueue.main.async {
-                self.listUserTableView.reloadData()
+                self.tableView.reloadData()
             }
         }
     }
@@ -131,7 +166,7 @@ final class DetailUserScreenViewController: UIViewController {
             followerButtonIsSelected = false
             configFollowerAndFollowingButton()
             DispatchQueue.main.async {
-                self.listUserTableView.reloadData()
+                self.tableView.reloadData()
             }
         }
     }

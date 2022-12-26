@@ -2,7 +2,7 @@
 //  StringExtension.swift
 //  IOS_Tutorial_11-12
 //
-//  Created by Duy Thái on 21/12/2022.
+//  Created by Duy Thai on 21/12/2022.
 //
 
 import Foundation

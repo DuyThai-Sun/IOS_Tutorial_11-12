@@ -25,6 +25,8 @@
 		1A3D0D692952EA7F00FBFC07 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3D0D682952EA7F00FBFC07 /* StringExtension.swift */; };
 		1A741D04295450C2005B89BD /* UserDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A741D03295450C2005B89BD /* UserDetailModel.swift */; };
 		1A741D0629546FE7005B89BD /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A741D0529546FE7005B89BD /* ViewControllerExtension.swift */; };
+		1A89C98B29554B3F00F369C9 /* FavoriteScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A89C98A29554B3F00F369C9 /* FavoriteScreenViewController.swift */; };
+		1A89C98D295559E500F369C9 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A89C98C295559E500F369C9 /* CoreData.swift */; };
 		1AEA1306295302EB000B6FD9 /* DetailUserScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEA1305295302EB000B6FD9 /* DetailUserScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +70,8 @@
 		1A3D0D682952EA7F00FBFC07 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		1A741D03295450C2005B89BD /* UserDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailModel.swift; sourceTree = "<group>"; };
 		1A741D0529546FE7005B89BD /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		1A89C98A29554B3F00F369C9 /* FavoriteScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteScreenViewController.swift; sourceTree = "<group>"; };
+		1A89C98C295559E500F369C9 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		1AEA1305295302EB000B6FD9 /* DetailUserScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUserScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +152,7 @@
 			children = (
 				1A3D0D4929514E9600FBFC07 /* SearchScreenViewController.swift */,
 				1AEA1305295302EB000B6FD9 /* DetailUserScreenViewController.swift */,
+				1A89C98A29554B3F00F369C9 /* FavoriteScreenViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 			children = (
 				1A3D0D552951994600FBFC07 /* UserModel.swift */,
 				1A741D03295450C2005B89BD /* UserDetailModel.swift */,
+				1A89C98C295559E500F369C9 /* CoreData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -332,11 +338,13 @@
 				1A3D0D1529514BC200FBFC07 /* AppDelegate.swift in Sources */,
 				1AEA1306295302EB000B6FD9 /* DetailUserScreenViewController.swift in Sources */,
 				1A3D0D672952B11500FBFC07 /* ReuseableViewExtension.swift in Sources */,
+				1A89C98D295559E500F369C9 /* CoreData.swift in Sources */,
 				1A741D0629546FE7005B89BD /* ViewControllerExtension.swift in Sources */,
 				1A3D0D562951994600FBFC07 /* UserModel.swift in Sources */,
 				1A3D0D532951919400FBFC07 /* APIRepository.swift in Sources */,
 				1A3D0D5929519B9500FBFC07 /* APICaller.swift in Sources */,
 				1A741D04295450C2005B89BD /* UserDetailModel.swift in Sources */,
+				1A89C98B29554B3F00F369C9 /* FavoriteScreenViewController.swift in Sources */,
 				1A3D0D602952925D00FBFC07 /* ViewExtension.swift in Sources */,
 				1A3D0D652952A12700FBFC07 /* Enum.swift in Sources */,
 				1A3D0D4A29514E9600FBFC07 /* SearchScreenViewController.swift in Sources */,

@@ -2,7 +2,7 @@
 //  UserTableViewCell.swift
 //  IOS_Tutorial_11-12
 //
-//  Created by Duy Thái on 20/12/2022.
+//  Created by Duy Thai on 20/12/2022.
 //
 
 import UIKit
@@ -31,7 +31,7 @@ final class UserTableViewCell: UITableViewCell, ReusableTableViewCell {
         linkGitTextView.textContainer.maximumNumberOfLines = 1
     }
     
-    func bindData(user: User) {
+    func bindData(user: UserModel) {
         self.callAPI.getImage(imageURL: (user.avatarUrl)) { [weak self] (data, error)  in
             guard let self = self else { return }
             if let error = error {

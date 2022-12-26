@@ -2,12 +2,13 @@
 //  UserDetailModel.swift
 //  IOS_Tutorial_11-12
 //
-//  Created by Duy Thái on 22/12/2022.
+//  Created by Duy Thai on 22/12/2022.
 //
 
 import Foundation
 
 struct UserDetail: Codable {
+    let isFavorite = false
     let name: String?
     let company: String?
     let bio: String?
